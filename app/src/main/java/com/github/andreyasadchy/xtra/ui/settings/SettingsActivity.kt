@@ -1020,6 +1020,34 @@ class SettingsActivity : AppCompatActivity() {
                     .show()
                 true
             }
+            fun setupSeekDurationPref(key: String) {
+                findPreference<EditTextPreference>(key)?.apply {
+                    // Show current value as summary
+                    summary = requireContext().prefs().getString(key, "10")
+                        ?.let { "$it s" } ?: "10 s"
+                    // Enforce numeric keyboard on the dialog's EditText
+                    setOnBindEditTextListener { editText ->
+                        editText.inputType = android.text.InputType.TYPE_CLASS_NUMBER
+                        editText.selectAll()
+                    }
+                    // Validate and update summary on change
+                    setOnPreferenceChangeListener { pref, newValue ->
+                        val seconds = newValue.toString().trim().toIntOrNull()
+                        if (seconds != null && seconds > 0) {
+                            pref.summary = "$seconds s"
+                            true
+                        } else {
+                            requireContext().toast(R.string.invalid_input) 
+                            false
+                        }
+                    }
+                }
+            }
+            setupSeekDurationPref(C.PLAYER_REWIND)
+            setupSeekDurationPref(C.PLAYER_FORWARD)
+
+
+            
         }
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
