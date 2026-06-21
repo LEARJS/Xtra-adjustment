@@ -167,23 +167,19 @@
         app:iconSpaceReserved="false"
         app:singleLineTitle="false" />
 
-    <ListPreference
-        android:defaultValue="10000"
+    <EditTextPreference
+        android:defaultValue="10"
+        android:inputType="number"
         android:key="playerRewind"
-        android:entries="@array/playerSeekEntries"
-        android:entryValues="@array/playerSeekValues"
-        android:summary="@string/seconds_full"
-        android:title="@string/rewind"
+        android:title="@string/rewind_duration"
         app:iconSpaceReserved="false"
         app:singleLineTitle="false" />
-
-    <ListPreference
-        android:defaultValue="10000"
+    
+    <EditTextPreference
+        android:defaultValue="10"
+        android:inputType="number"
         android:key="playerForward"
-        android:entries="@array/playerSeekEntries"
-        android:entryValues="@array/playerSeekValues"
-        android:summary="@string/seconds_full"
-        android:title="@string/forward"
+        android:title="@string/fast_forward_duration"
         app:iconSpaceReserved="false"
         app:singleLineTitle="false" />
 
