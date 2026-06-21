@@ -86,6 +86,8 @@
     <string name="no_storage_detected">No available storage detected (most likely the phone is connected to a computer).</string>
     <string name="rewind">Rewind</string>
     <string name="forward">Fast forward</string>
+    <string name="rewind_duration">Rewind duration (seconds)</string>
+    <string name="fast_forward_duration">Fast forward duration (seconds)</string>
     <string name="seconds_full">%s seconds</string>
     <string name="unfollow_channel">Unfollow %s?</string>
     <string name="now_following">You\'re now following %s</string>
