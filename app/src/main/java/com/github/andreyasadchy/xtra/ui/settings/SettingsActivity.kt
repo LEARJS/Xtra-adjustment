@@ -1037,7 +1037,7 @@ class SettingsActivity : AppCompatActivity() {
                             pref.summary = "$seconds s"
                             true
                         } else {
-                            requireContext().toast(R.string.invalid_input) 
+                            android.widget.Toast.makeText(requireContext(), "Please enter a valid number greater than 0", android.widget.Toast.LENGTH_SHORT).show() 
                             false
                         }
                     }
